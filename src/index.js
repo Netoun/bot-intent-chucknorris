@@ -15,9 +15,8 @@ assertQueue(connexionEstablished, ($message) => {
                 if (error) throw new Error(error);
                 let jsonData = JSON.parse(body);                 
                 let reponse = jsonData[0].fact
-                console.log($message)
-                
-                const newMessage = Object.assign($message.message, { content: reponse }) 
+                let reponseUtf8 = utf8.encode(reponse)
+                const newMessage = Object.assign($message.message, { content: reponseUtf8 }) 
                 const newIntentMessage = Object.assign($message, { message: newMessage })
                 sendTo(connexionEstablished, JSON.stringify(newIntentMessage))            
                         
