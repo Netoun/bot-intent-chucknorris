@@ -1,7 +1,7 @@
 const exchange = process.env.RABBIT_EXCHANGE
 const apiKey = process.env.RABBIT_INTENT_API_BINDING
-const queue = process.env.RABBIT_INTENT_CLASSEMENT_QUEUE
-const binding = process.env.RABBIT_INTENT_CLASSEMENT_BINDING 
+const queue = process.env.RABBIT_INTENT_CHUCKNORRIS_QUEUE
+const binding = process.env.RABBIT_INTENT_CHUCKNORRIS_BINDING 
 
 
 export const assertQueue = (connexion, callback) => {
