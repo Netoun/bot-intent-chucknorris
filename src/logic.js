@@ -12,7 +12,7 @@ export const logic = ($message) => {
             if (error) throw new Error(error)
             let jsonData = JSON.parse(body)
             let reponse = jsonData[0].fact
-            let reponseUtf8 = utf8.encode(reponse)
+            let reponseUtf8 = utf8.decode(reponse)
             const newMessage = Object.assign($message.message, { content: reponseUtf8 })
             const newIntentMessage = Object.assign($message, { message: newMessage })
             resolve(newIntentMessage)
